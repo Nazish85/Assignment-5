@@ -1,0 +1,472 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f6f8fa;
+  color: #333;
+  margin: 0;
+  padding: 30px;
+}
+
+.cv-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-photo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #0074d9;
+  object-fit: cover;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #0074d9;
+}
+
+header h2 {
+  margin-top: 5px;
+  font-weight: 400;
+  color: #555;
+  font-size: 18px;
+}
+
+.contact-info p,
+.personal-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.personal-info {
+  margin-top: 15px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+main section {
+  margin-bottom: 30px;
+}
+
+main h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #0074d9;
+}
+
+section:nth-of-type(1) p {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+main h3 {
+  margin: 0 0 8px 0;
+  color: #222;
+}
+
+main p,
+main ul {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+main ul {
+  padding-left: 20px;
+}
+
+main ul li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 600px) {
+  .cv-container {
+    padding: 20px;
+    margin: 10px;
+  }
+}
+
+/* Header Flex Layout */
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.profile-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #0074d9;
+  object-fit: cover;
+}
+
+.header-center {
+  flex: 1;
+  text-align: left;
+  min-width: 200px;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.header-center h1,
+.header-center h2 {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.header-center h2 {
+  margin: 5px 0 0 0;
+  font-weight: 400;
+  color: #555;
+  font-size: 16px;
+}
+
+.header-right.contact-info {
+  text-align: justify;
+  text-align-last: left;
+  font-size: 14px;
+  color: #444;
+  min-width: 220px;
+  width: 280px; /* make container wider */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  margin-left: auto; /* keep it on right side */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+}
+
+/* Personal Info Line */
+
+.personal-line {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #333;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid #0074d9;
+  padding-bottom: 10px;
+}
+
+.personal-line span {
+  white-space: nowrap;
+  flex: none;
+}
+
+/* Experience & Education Sections */
+
+.experience-container {
+  margin-top: 15px;
+  position: relative;
+}
+
+.experience-columns {
+  display: flex;
+  position: relative;
+  gap: 20px;
+  min-height: 180px; /* ensures vertical line spans enough height */
+}
+
+/* Continuous vertical blue line between dates and details */
+.experience-columns::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 120px; /* align with dates-column width */
+  width: 3px;
+  background-color: #0074d9;
+  border-radius: 2px;
+  z-index: 0;
+}
+
+/* Dates column */
+.dates-column {
+  width: 120px;
+  text-align: left;
+  font-weight: bold;
+  color: #0074d9;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Align each date vertically with detail, with consistent padding */
+.dates-column div {
+  padding: 12px 8px;
+  position: relative;
+}
+
+/* Details column */
+.details-column {
+  flex: 1;
+  padding-left: 40px; /* space from vertical line */
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.details-column div {
+  padding: 12px 0;
+  border-bottom: none;
+}
+
+/* Section Borders for all except the last section */
+section:not(:last-of-type) {
+  border-bottom: 2px solid #0074d9;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+/* Skills Section Styling */
+
+.skills-section {
+  margin-bottom: 30px;
+}
+
+.skills-group {
+  margin-bottom: 20px;
+}
+
+.skills-group h3 {
+  color: #2980b9;
+  margin: 15px 0 10px;
+  font-size: 1.1em;
+}
+
+.skills-group ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-group li {
+  background-color: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border-left: 3px solid #3498db;
+}
+
+@media (max-width: 600px) {
+  .skills-group ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* References Section */
+
+.references-section {
+  text-align: left; /* Keeps heading aligned left */
+}
+
+.references-section h2 {
+  text-align: left; /* Explicit left alignment for heading */
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.reference-blocks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers blocks horizontally */
+  width: 100%;
+}
+
+.reference-block {
+  width: 100%;
+  max-width: 400px; /* Limit width */
+  margin: 0 auto 20px auto; /* Center horizontally with vertical spacing */
+  text-align: justify; /* Justify text inside blocks */
+}
+
+.reference-block p {
+  margin: 8px 0;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.reference-block p strong {
+  font-weight: 600;
+  color: #2980b9;
+  display: inline-block;
+  min-width: 60px;
+  text-align: left; /* Keep labels left-aligned */
+}
+
+.reference-divider {
+  width: 60%;
+  margin: 25px auto;
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+  .reference-block {
+    padding: 15px;
+    width: 90%;
+    text-align: justify;
+  }
+
+  .reference-block p strong {
+    display: block;
+    margin-bottom: 3px;
+    text-align: left;
+  }
+}
+
+.reference-title {
+  font-weight: bold;
+}
+
+/* Language Section */
+
+.language-section h1 {
+  color: #3498db;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.skill {
+  display: flex; /* make the container flexbox */
+  align-items: center; /* vertically center label and bar */
+  gap: 3px; /* space between label and bar */
+  max-width: 400px; /* optional: control width */
+  margin: 0 auto 20px; /* center the whole skill block */
+}
+
+.skill span {
+  display: block; /* can keep block or inline-block */
+  min-width: 100px; /* fixed width for labels */
+  font-size: 12px;
+  text-align: right; /* align label text right */
+  color: #333;
+  margin-bottom: 0; /* remove bottom margin to avoid spacing below */
+}
+
+.bar {
+  background-color: #d3d3d3;
+  height: 4px; /* bar thickness */
+  max-width: 250px; /* limit width */
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+  flex-grow: 1;
+  position: relative; /* just in case */
+}
+
+.fill {
+  background-color: #0074d9; /* Changed to consistent blue */
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.language-info {
+  text-align: left; /* Change from center to left for neat label alignment */
+  margin-bottom: 20px;
+  font-size: 18px;
+  max-width: 400px; /* optional: control the max width */
+  margin-left: auto;
+  margin-right: auto; /* center the whole block on the page */
+}
+
+.language-info span {
+  display: inline-block; /* so we can control width */
+  width: auto; /* fit to label text */
+  min-width: auto; /* remove any fixed min-width */
+  padding-left: 0; /* remove left padding */
+  margin-right: 8px; /* small gap to next element */
+  text-align: right;
+  white-space: nowrap; /* prevent label wrap */
+  color: #333;
+}
+
+/* Research Section */
+
+.research-section h1 {
+  color: #3498db;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.research-section p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+  text-align: center;
+}
+
+/* Objective Section */
+
+.objective-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px; /* space between heading and paragraph */
+  flex-wrap: wrap; /* added to avoid overflow on small screens */
+}
+
+.objective-section h2 {
+  margin: 0;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.objective-section p {
+  font-size: 17px; /* or any smaller size you prefer */
+  line-height: 1.5; /* keep for readability */
+  margin: 0;
+  text-align: justify;
+  flex: 1; /* take remaining space */
+  min-width: 250px; /* added for responsiveness */
+}
+
+/* Projects Section */
+
+section.projects-section h2 {
+  text-align: left; /* heading stays left */
+}
+
+section.projects-section ul {
+  list-style-position: outside;
+  padding-left: 40px; /* space from left container edge */
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+section.projects-section ul li {
+  margin-bottom: 10px;
+  /* Removed text-indent to avoid clustering */
+}
